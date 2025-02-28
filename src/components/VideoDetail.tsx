@@ -75,16 +75,10 @@ export default function VideoDetail() {
       <div className="space-y-8">
         {segments.map((segment) => (
           <div key={segment.id} className="space-y-4">
-            {/* Text Content */}
+            {/* Text Content - Format with Chapter # (timestamp) */}
             <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-center mb-2">
-                <Clock className="w-4 h-4 text-gray-500 mr-2" />
-                <span className="text-sm text-gray-500">
-                  {formatTime(segment.start_time)} - {formatTime(segment.end_time)}
-                </span>
-              </div>
               <h3 className="text-xl font-semibold mb-2">
-                Chapter {segment.segment_no}
+                Chapter {segment.segment_no} ({formatTime(segment.start_time)} - {formatTime(segment.end_time)})
               </h3>
               <p className="text-gray-600">{segment.summary}</p>
             </div>
